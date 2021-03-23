@@ -689,6 +689,16 @@ deps_/home/tdinhcong/boot_practice/module/drive_full/udev_device_driver/udev_cla
     $(wildcard include/config/arch/omap.h) \
   include/linux/pm_wakeup.h \
   include/linux/cdev.h \
+  include/linux/slab.h \
+    $(wildcard include/config/debug/slab.h) \
+    $(wildcard include/config/failslab.h) \
+    $(wildcard include/config/have/hardened/usercopy/allocator.h) \
+    $(wildcard include/config/slab.h) \
+    $(wildcard include/config/slub.h) \
+  include/linux/kmemleak.h \
+    $(wildcard include/config/debug/kmemleak.h) \
+  include/linux/kasan.h \
+  /home/tdinhcong/boot_practice/module/drive_full/udev_device_driver/udev_class_mknod.h \
 
 /home/tdinhcong/boot_practice/module/drive_full/udev_device_driver/udev_class_mknod.o: $(deps_/home/tdinhcong/boot_practice/module/drive_full/udev_device_driver/udev_class_mknod.o)
 
