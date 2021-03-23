@@ -4,39 +4,39 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-CLASS_NAME	udev_device_driver/udev_class_mknod.c	9;"	d	file:
-CONTROL_ACCESS_REG	udev_device_driver/udev_class_mknod.h	74;"	d
-CTRL_READ_DATA_BIT	udev_device_driver/udev_class_mknod.h	76;"	d
-CTRL_WRITE_DATA_BIT	udev_device_driver/udev_class_mknod.h	77;"	d
-DEVICE_NAME	udev_device_driver/udev_class_mknod.c	8;"	d	file:
-DEVICE_STATUS_REG	udev_device_driver/udev_class_mknod.h	47;"	d
-DISABLE	udev_device_driver/udev_class_mknod.h	80;"	d
+CLASS_NAME	udev_device_driver/udev_class_mknod.c	10;"	d	file:
+CONTROL_ACCESS_REG	udev_device_driver/udev_class_mknod.h	71;"	d
+CTRL_READ_DATA_BIT	udev_device_driver/udev_class_mknod.h	73;"	d
+CTRL_WRITE_DATA_BIT	udev_device_driver/udev_class_mknod.h	74;"	d
+DEVICE_NAME	udev_device_driver/udev_class_mknod.c	9;"	d	file:
+DEVICE_STATUS_REG	udev_device_driver/udev_class_mknod.h	44;"	d
+DISABLE	udev_device_driver/udev_class_mknod.h	77;"	d
 DRIVER_AUTHOR	udev_device_driver/udev_class_mknod.c	/^MODULE_AUTHOR(DRIVER_AUTHOR); $/;"	v
-DRIVER_AUTHOR	udev_device_driver/udev_class_mknod.c	10;"	d	file:
+DRIVER_AUTHOR	udev_device_driver/udev_class_mknod.c	11;"	d	file:
 DRIVER_DESC	udev_device_driver/udev_class_mknod.c	/^MODULE_DESCRIPTION(DRIVER_DESC); $/;"	v
-DRIVER_DESC	udev_device_driver/udev_class_mknod.c	11;"	d	file:
+DRIVER_DESC	udev_device_driver/udev_class_mknod.c	12;"	d	file:
 DRIVER_VERSION	udev_device_driver/udev_class_mknod.c	/^MODULE_VERSION(DRIVER_VERSION); $/;"	v
-DRIVER_VERSION	udev_device_driver/udev_class_mknod.c	12;"	d	file:
-ENABLE	udev_device_driver/udev_class_mknod.h	79;"	d
+DRIVER_VERSION	udev_device_driver/udev_class_mknod.c	13;"	d	file:
+ENABLE	udev_device_driver/udev_class_mknod.h	76;"	d
 KERNEL_DIR	udev_device_driver/Makefile	/^KERNEL_DIR ?= $(HOME)\/boot_practice\/linux$/;"	m
 MAJOR_NUMBER	basic/dev.c	9;"	d	file:
 MINOR_NUMBER	basic/dev.c	10;"	d	file:
-NOT_OVERFLOW	udev_device_driver/udev_class_mknod.h	56;"	d
-NOT_READY	udev_device_driver/udev_class_mknod.h	54;"	d
-NUM_CTRL_REGS	udev_device_driver/udev_class_mknod.h	10;"	d
-NUM_DATA_REGS	udev_device_driver/udev_class_mknod.h	12;"	d
-NUM_DEV_REGS	udev_device_driver/udev_class_mknod.h	13;"	d
-NUM_STS_REGS	udev_device_driver/udev_class_mknod.h	11;"	d
-OVERFLOW	udev_device_driver/udev_class_mknod.h	55;"	d
-READY	udev_device_driver/udev_class_mknod.h	53;"	d
-READ_COUNT_H_REG	udev_device_driver/udev_class_mknod.h	21;"	d
-READ_COUNT_L_REG	udev_device_driver/udev_class_mknod.h	22;"	d
-REG_SIZE	udev_device_driver/udev_class_mknod.h	9;"	d
-STS_DATAREGS_OVERFLOW_BIT	udev_device_driver/udev_class_mknod.h	51;"	d
-STS_READ_ACCESS_BIT	udev_device_driver/udev_class_mknod.h	49;"	d
-STS_WRITE_ACCESS_BIT	udev_device_driver/udev_class_mknod.h	50;"	d
-WRITE_COUNT_H_REG	udev_device_driver/udev_class_mknod.h	29;"	d
-WRITE_COUNT_L_REG	udev_device_driver/udev_class_mknod.h	30;"	d
+NOT_OVERFLOW	udev_device_driver/udev_class_mknod.h	53;"	d
+NOT_READY	udev_device_driver/udev_class_mknod.h	51;"	d
+NUM_CTRL_REGS	udev_device_driver/udev_class_mknod.h	7;"	d
+NUM_DATA_REGS	udev_device_driver/udev_class_mknod.h	9;"	d
+NUM_DEV_REGS	udev_device_driver/udev_class_mknod.h	10;"	d
+NUM_STS_REGS	udev_device_driver/udev_class_mknod.h	8;"	d
+OVERFLOW	udev_device_driver/udev_class_mknod.h	52;"	d
+READY	udev_device_driver/udev_class_mknod.h	50;"	d
+READ_COUNT_H_REG	udev_device_driver/udev_class_mknod.h	18;"	d
+READ_COUNT_L_REG	udev_device_driver/udev_class_mknod.h	19;"	d
+REG_SIZE	udev_device_driver/udev_class_mknod.h	6;"	d
+STS_DATAREGS_OVERFLOW_BIT	udev_device_driver/udev_class_mknod.h	48;"	d
+STS_READ_ACCESS_BIT	udev_device_driver/udev_class_mknod.h	46;"	d
+STS_WRITE_ACCESS_BIT	udev_device_driver/udev_class_mknod.h	47;"	d
+WRITE_COUNT_H_REG	udev_device_driver/udev_class_mknod.h	26;"	d
+WRITE_COUNT_L_REG	udev_device_driver/udev_class_mknod.h	27;"	d
 __cached_gcc_-print-file-name_include	udev_device_driver/.cache.mk	/^__cached_gcc_-print-file-name_include := \/usr\/lib\/gcc\/x86_64-linux-gnu\/5\/include$/;"	m
 __this_module	basic/dev.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
 __this_module	udev_device_driver/udev_class_mknod.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
@@ -44,8 +44,8 @@ __used	basic/dev.mod.c	/^__used$/;"	v	file:
 __used	udev_device_driver/udev_class_mknod.mod.c	/^__used$/;"	v	file:
 __used	udev_device_driver/udev_class_mknod.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
 cdev	udev_device_driver/udev_class_mknod.c	/^    struct class cdev;$/;"	m	struct:vchar_drv	typeref:struct:vchar_drv::class	file:
-control_reg	udev_device_driver/udev_class_mknod.c	/^    unsigned char *control_reg;$/;"	m	struct:vchar_dev	file:
-data_reg	udev_device_driver/udev_class_mknod.c	/^    unsigned char *data_reg;$/;"	m	struct:vchar_dev	file:
+control_regs	udev_device_driver/udev_class_mknod.c	/^    unsigned char *control_regs;$/;"	m	struct:vchar_dev	file:
+data_regs	udev_device_driver/udev_class_mknod.c	/^    unsigned char *data_regs;$/;"	m	struct:vchar_dev	file:
 dev	udev_device_driver/udev_class_mknod.c	/^    struct device *dev;$/;"	m	struct:vchar_drv	typeref:struct:vchar_drv::device	file:
 dev_class	udev_device_driver/udev_class_mknod.c	/^    struct class *dev_class;$/;"	m	struct:vchar_drv	typeref:struct:vchar_drv::class	file:
 dev_num	udev_device_driver/udev_class_mknod.c	/^    dev_t dev_num;$/;"	m	struct:vchar_drv	file:
@@ -61,14 +61,18 @@ my_dev_fops	basic/dev.c	/^static const struct file_operations my_dev_fops = {$/;
 my_dev_ioctl	basic/dev.c	/^static long my_dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg) {$/;"	f	file:
 my_dev_open	basic/dev.c	/^static int my_dev_open(struct inode *inode, struct file *file) {$/;"	f	file:
 obj-m	basic/Makefile	/^obj-m := dev.o$/;"	m
-status_reg	udev_device_driver/udev_class_mknod.c	/^    unsigned char *status_reg;$/;"	m	struct:vchar_dev	file:
-vchar_dev	udev_device_driver/udev_class_mknod.c	/^typedef struct vchar_dev{$/;"	s	file:
+open_cnt	udev_device_driver/udev_class_mknod.c	/^    unsigned int open_cnt;$/;"	m	struct:vchar_drv	file:
+status_regs	udev_device_driver/udev_class_mknod.c	/^    unsigned char *status_regs;$/;"	m	struct:vchar_dev	file:
+vcdev	udev_device_driver/udev_class_mknod.c	/^    struct cdev *vcdev;$/;"	m	struct:vchar_drv	typeref:struct:vchar_drv::cdev	file:
+vchar_dev	udev_device_driver/udev_class_mknod.c	/^typedef struct vchar_dev {$/;"	s	file:
 vchar_dev_t	udev_device_driver/udev_class_mknod.c	/^} vchar_dev_t;$/;"	t	typeref:struct:vchar_dev	file:
 vchar_driver_exit	udev_device_driver/udev_class_mknod.c	/^module_exit(vchar_driver_exit);$/;"	v
 vchar_driver_exit	udev_device_driver/udev_class_mknod.c	/^static void __exit vchar_driver_exit(void) {$/;"	f	file:
 vchar_driver_init	udev_device_driver/udev_class_mknod.c	/^module_init(vchar_driver_init);$/;"	v
 vchar_driver_init	udev_device_driver/udev_class_mknod.c	/^static int __init vchar_driver_init(void) {$/;"	f	file:
+vchar_driver_open	udev_device_driver/udev_class_mknod.c	/^static vchar_driver_open(struct inode *inode, struct file *filp) {$/;"	f	file:
 vchar_drv	udev_device_driver/udev_class_mknod.c	/^struct vchar_drv {$/;"	s	file:
 vchar_drv	udev_device_driver/udev_class_mknod.c	/^} vchar_drv;$/;"	v	typeref:struct:vchar_drv
 vchar_hw	udev_device_driver/udev_class_mknod.c	/^    vchar_dev_t *vchar_hw;$/;"	m	struct:vchar_drv	file:
+vchar_hw_exit	udev_device_driver/udev_class_mknod.c	/^int vchar_hw_exit(vchar_dev_t *hw) {$/;"	f
 vchar_hw_init	udev_device_driver/udev_class_mknod.c	/^int vchar_hw_init(vchar_dev_t *hw) {$/;"	f

@@ -3,6 +3,7 @@
 #include <linux/device.h>   // define func to create and ddestroy device file
 #include <linux/cdev.h>     // 
 #include <linux/slab.h>     // allocate memory in kernel space, kmalloc(N, GFP_KERNEL) and kzalloc
+#include "linux/cdev.h"     // declare the file operation for entry point like open, read or write from device file to physical device.
 #include "udev_class_mknod.h"
 
 #define DEVICE_NAME "mydev"
@@ -11,19 +12,43 @@
 #define DRIVER_DESC   "A sample character device driver"
 #define DRIVER_VERSION "0.1"
 
+/* structure to allocate memory for physical device (kernel buffer) */
 typedef struct vchar_dev {
     unsigned char *control_regs;
     unsigned char *status_regs;
     unsigned char *data_regs;
 } vchar_dev_t;
 
+/* structure for character driver*/
 struct vchar_drv {
     dev_t dev_num;
     struct class *dev_class;
     struct class cdev;
     struct device *dev;
     vchar_dev_t *vchar_hw;
+    struct cdev *vcdev;
+    unsigned int open_cnt;
 } vchar_drv;
+
+/* entry point open() */
+static int vchar_driver_open(struct inode *inode, struct file *filp) {
+    vchar_drv.open_cnt++;
+    printk("Handle opened event (%d)\n",vchar_drv.open_cnt);
+    return 0;
+}
+
+/* entry point release() */
+static int vchar_driver_release(struct inode *inode, struct file *filp) {
+    printk("Handle closed event \n");
+    return 0;
+}
+
+/* file operations for cdev*/
+static struct file_operations fops = {
+    .owner = THIS_MODULE,
+    .open = vchar_driver_open,
+    .release = vchar_driver_release,
+};
 
 /****************** device specific - START *******************/
 
@@ -50,6 +75,7 @@ int vchar_hw_exit(vchar_dev_t *hw) {
     kfree(hw->control_regs);    
 }
 
+/****************** driver specific - START *******************/
 /* register driver */
 static int __init vchar_driver_init(void) {
     int ret = 0;
@@ -60,7 +86,7 @@ static int __init vchar_driver_init(void) {
         printk("Failed to register device number dynamic");
         goto failed_register_devnum;
     }
-    printk("Allocate device number (%d, %d\n", MAJOR(vchar_drv.dev_num), MINOR(vchar_drv.dev_num));
+    printk("Allocate device number (%d, %d)\n", MAJOR(vchar_drv.dev_num), MINOR(vchar_drv.dev_num));
 
     /* register device class */
     vchar_drv.dev_class = class_create(THIS_MODULE, CLASS_NAME);
@@ -90,10 +116,26 @@ static int __init vchar_driver_init(void) {
         printk("Failed to initialize a virtual character device\n");
         goto failed_init_hw;
     }
+    printk("Initialize allocate memory for device successfully\n");
+
+    /* register entry point to kernel */
+    vchar_drv.vcdev = cdev_alloc();
+    if (vchar_drv.vcdev == NULL) {
+        printk("Failed to allocate cdev structure\n");
+        goto failed_alloc_cdev;
+    }
+    cdev_init(vchar_drv.vcdev, &fops);
+    ret = cdev_add(vchar_drv.vcdev, vchar_drv.dev_num, 1);
+    if (ret < 0) {
+        printk("Failed to add a char device to system\n");
+        goto failed_alloc_cdev;
+    }
+    printk("Initialize cdev for entry point successfully\n");
 
     return 0;
 
-
+failed_alloc_cdev:
+    vchar_hw_exit(vchar_drv.vchar_hw);
 failed_init_hw:
     kfree(vchar_drv.vchar_hw);   
 failed_allocate_structure:
@@ -106,7 +148,10 @@ failed_register_devnum:
     return ret;
 }
 
+/****************** device driver - EXIT *******************/
 static void __exit vchar_driver_exit(void) {
+    /* unregister entry point of device file */
+    cdev_del(vchar_drv.vcdev);
     /* exit physical device */
     vchar_hw_exit(vchar_drv.vchar_hw);
     /* free kernel buffer*/
