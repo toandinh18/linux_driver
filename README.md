@@ -17,3 +17,5 @@ For cross-compiler, referent to this book: https://github.com/ALIBERA/linux_book
 
 
 # Platform driver
+
+Reference: https://ita93.github.io/linux%20device%20driver/Platform-Device
