@@ -3,6 +3,7 @@
 #include <linux/fs.h>
 #include <linux/platform_device.h>
 #include <linux/types.h>
+#include <sys/ioctl.h>
 #include <linux/io.h>
 #include <linux/of.h>
 #include <linux/uaccess.h>
@@ -118,10 +119,16 @@ static ssize_t led_read(struct file *file, char __user *buff, size_t count, loff
 	return 0;
 }
 
+static ssize_t led_ioctl(struct file *file, unsigned int cmd, unsigned long arg) {
+    pr_info("ioctl entry is called\n");
+    return 0;
+}
+
 static const struct file_operations led_fops = {
 	.owner = THIS_MODULE,
 	.read = led_read,
 	.write = led_write,
+    .unlocked_ioctl = led_ioctl,
 };
 
 static int led_probe(struct platform_device *pdev)
@@ -136,7 +143,9 @@ static int led_probe(struct platform_device *pdev)
 	led_device = devm_kzalloc(&pdev->dev, sizeof(struct led_dev), GFP_KERNEL);
 
 	of_property_read_string(pdev->dev.of_node, "label", &led_device->led_name);
-	led_device->led_misc_device.minor = MISC_DYNAMIC_MINOR;
+	
+    /* declare the misc struct for each device led */ 
+    led_device->led_misc_device.minor = MISC_DYNAMIC_MINOR;
 	led_device->led_misc_device.name = led_device->led_name;
 	led_device->led_misc_device.fops = &led_fops;
 
