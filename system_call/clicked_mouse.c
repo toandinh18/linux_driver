@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
               break;
         };
 
-      // printf("Code: %d , Type: %d, Value: %d\n", code, type, value);
+       printf("Code: %d , Type: %d, Value: %d\n", code, type, value);
     }
     return 0;
 }
